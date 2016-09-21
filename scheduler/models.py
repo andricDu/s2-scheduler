@@ -23,7 +23,7 @@ class Sample(models.Model):
     """
     Abstract class that will be the base for all our models. Contains the sample id.
     """
-    sample_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    sample_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=True)
 
     class Meta:
         abstract = True
