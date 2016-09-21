@@ -18,3 +18,6 @@
 from django.contrib import admin
 
 # Register your models here.
+from .models import QueuedSample, InProgressSample, FinishedSample
+
+admin.site.register([QueuedSample, InProgressSample, FinishedSample])

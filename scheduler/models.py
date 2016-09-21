@@ -29,15 +29,23 @@ class Sample(models.Model):
         abstract = True
 
 
-
-class SampleQueue(Sample):
+class QueuedSample(Sample):
     added = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return '{} ; {}'.format(self.sample_id, self.added)
 
-class InProgress(Sample):
+
+class InProgressSample(Sample):
     ip = models.GenericIPAddressField()
     started = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return '{} ; {} ; {}'.format(self.sample_id,  self.ip, self.started)
 
-class Finished(Sample):
+
+class FinishedSample(Sample):
     finished = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return '{} ; {}'.format(self.sample_id, self.finished)

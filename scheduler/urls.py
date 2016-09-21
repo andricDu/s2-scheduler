@@ -21,4 +21,6 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    url(r'small_sample_queue/$', views.get_sample, name='get_sample'),
+    url(r'small_sample_completed/$', views.finish_sample, name='finish_sample')
 ]
